@@ -23,7 +23,6 @@ const personSchema = new Schema({
 
 // Create the Person model based on the schema
 const Person = mongoose.model("Person", personSchema);
-//console.log(Person);
 //3. Create and Save a Record of a Model:
 
 const person = new Person({
@@ -33,14 +32,14 @@ const person = new Person({
 });
 
 // Save the document using then/catch
-/*person
+person
   .save()
   .then((savedPerson) => {
     console.log("Person saved:", savedPerson);
   })
   .catch((err) => {
     console.error("Error saving person:", err);
-  });*/
+  });
 
 //4.Create Many Records with model.create()
 const peopleArray = [
@@ -50,6 +49,7 @@ const peopleArray = [
 ];
 //simple way
 //Person.create(peopleArray);
+
 //with function
 // Create many records using model.create()
 const createPeople = async () => {
@@ -62,7 +62,7 @@ const createPeople = async () => {
 };
 
 // Call the function to create multiple records
-//createPeople();
+createPeople();
 
 //createManyPeople(peopleArray);
 
@@ -72,7 +72,7 @@ const findByName = async (name) => {
   console.log("Found people:", people);
 };
 
-//findByName("John Doe");
+findByName("John Doe");
 
 //6. Use model.findOne() to Return a Single Matching Document
 const findOneByFood = async (food) => {
@@ -82,7 +82,7 @@ const findOneByFood = async (food) => {
   console.log("Found person:", person);
 };
 
-//findOneByFood("Pizza");
+findOneByFood("Pizza");
 
 //7.Use model.findById() to Search Your Database By _id
 const findById = async (personId) => {
@@ -90,7 +90,7 @@ const findById = async (personId) => {
   console.log("Found person by ID:", person);
 };
 
-//findById("680da1625324de1c9f9dfa18");
+findById("680da1625324de1c9f9dfa18");
 
 //8.Perform Classic Updates by Running Find, Edit, Then Save
 const updateFavoriteFood = async (personId) => {
@@ -112,7 +112,7 @@ const updateFavoriteFood = async (personId) => {
   }
 };
 
-//updateFavoriteFood("680da1625324de1c9f9dfa18");
+updateFavoriteFood("680da1625324de1c9f9dfa18");
 
 //9.Perform New Updates on a Document Using model.findOneAndUpdate()
 const updateAge = async (personName) => {
@@ -124,7 +124,7 @@ const updateAge = async (personName) => {
   console.log("Updated person:", updatedPerson);
 };
 
-//updateAge("John Doe");
+updateAge("John Doe");
 
 //10.Delete One Document Using model.findByIdAndRemove
 const deletePersonById = async (personId) => {
@@ -132,7 +132,7 @@ const deletePersonById = async (personId) => {
   console.log("Deleted person:", deletedPerson);
 };
 
-//deletePersonById("680da8fa818347425640d2ca");
+deletePersonById("680da8fa818347425640d2ca");
 
 //11.Delete Many Documents with model.remove()
 const deleteManyPeople = async () => {
@@ -152,7 +152,7 @@ const deleteManyPeople = async () => {
   }
 };
 
-//deleteManyPeople();
+deleteManyPeople();
 
 //12.Chain Search Query Helpers to Narrow Search Results
 const findBurritoLovers = async () => {
@@ -165,4 +165,4 @@ const findBurritoLovers = async () => {
   console.log("Burrito lovers:", results);
 };
 
-//findBurritoLovers();
+findBurritoLovers();
